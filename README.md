@@ -12,7 +12,15 @@ This project utilizes **Gin** to tunnel connections **man-in-the-middle** style.
 **PORT** = *Port that proxy will listen to*
 
 ## Instructions for HTTP connections
-Just compile and run.<br>
+Build project
+```batch
+go build
+```
+
+Run build.
+```batch
+./main
+```
 
 ## Instructions for HTTPS connections
 Depending on the web service you're using, SSL setup may done automatically. (Google Cloud, AWS, Azure, Render, etc)<br>
