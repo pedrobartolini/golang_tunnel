@@ -1,6 +1,9 @@
-# Fast and lightweight HTTP-Proxy written in Golang
-This project utilizes **Gin** to tunnel connections man-in-the-middle style.<br>
-Both **requests** and **responses** are proxied.<br><br>
+# Fast and Lightweight HTTP-Proxy
+This project utilizes **Gin** to tunnel connections **man-in-the-middle** style.<br>
+
+- Every incoming request are proxied and response will return to the **INITIATOR**.
+- One direction only. *(Direction = **TUNNEL_IP**)*.
+
 *May be useful for developing on local machine, as you can tunnel HTTPS to HTTP connections.*
 <img src="https://github.com/pedrobartolini/golang_tunnel/blob/main/git/diagram.png">
 
