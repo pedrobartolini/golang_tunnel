@@ -16,32 +16,34 @@ func main() {
 
 	tunnel_ip := os.Getenv("TUNNEL_IP")
 	if tunnel_ip == "" {
-		panic("Error: env TUNNEL_IP not defined")
+		panic("Error: failed to get env TUNNEL_IP")
 	}
 
 	port := os.Getenv("PORT")
 	if port == "" {
-		panic("Error: env PORT not defined")
+		panic("Error: failed to get env PORT")
 	}
 
 	upstream, err := url.Parse(tunnel_ip)
 	if err != nil {
-		panic("Error: failed to parse tunnel ip")
+		panic("Error: failed to parse TUNNEL_IP")
 	}
 
 	proxy := httputil.NewSingleHostReverseProxy(upstream)
 	proxy.Transport = &http.Transport{
-		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+		TLSClientConfig:   &tls.Config{InsecureSkipVerify: true},
+		ForceAttemptHTTP2: true,
+		IdleConnTimeout:   300 * 1000000000,
 	}
 
 	gin.SetMode(gin.ReleaseMode)
-	api := gin.Default()
+	proxy_server := gin.Default()
 
-	api.Use(func(client *gin.Context) {
+	proxy_server.Use(func(client *gin.Context) {
 		proxy.ServeHTTP(client.Writer, client.Request)
 	})
 
-	if api.Run(":"+port) != nil {
-		panic("Error: failed to initialize api. Port:" + port)
+	if proxy_server.Run(":"+port) != nil {
+		panic("Error: failed to start proxy.")
 	}
 }
