@@ -5,7 +5,7 @@ Both **requests** and **responses** are proxied.<br><br>
 <img src="https://github.com/pedrobartolini/golang_tunnel/blob/main/git/diagram.png">
 
 ### Environment variables:
-**TUNNEL_IP** =  *Ip that proxy will forward requests to<br>*
+**TUNNEL_IP** =  *Server that proxy will forward requests to<br>*
 **PORT** = *Port that proxy will listen to*
 
 ## Instructions for HTTP connections
