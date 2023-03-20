@@ -16,5 +16,5 @@ Just compile and run.<br>
 
 ## Instructions for HTTPS connections
 Depending on the web service you're using, SSL setup may done automatically. (Google Cloud, AWS, Azure, Render, etc)<br>
-If your web service doesn't do this, or if you're not using a web service, you'll need to implement SSL manually into this project.
+If your web service doesn't do this or if you're not using a web service, you'll need to implement SSL manually into this project.
 
