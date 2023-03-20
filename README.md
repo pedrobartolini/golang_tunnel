@@ -26,7 +26,7 @@ Run build
 **Remember to set your environment variables before running**
 
 ## For HTTPS connections
-If you're using web services like GCP, Aws, Azure, Render, etc, HTTPS setup may be done automatically.
+If you're using web services like GCP, AWS, Azure, Render, etc, HTTPS setup may be done automatically.
 
 **If your web service doesn't do this or if you're not using a web service, you'll need to implement SSL manually into this project.**
 
