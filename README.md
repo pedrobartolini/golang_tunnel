@@ -1,28 +1,35 @@
 # Fast and Lightweight HTTP-Proxy
-This project utilizes **Gin** to tunnel connections **man-in-the-middle** style.<br>
+This project utilizes **Gin** to tunnel connections **man-in-the-middle** style.
 
 - Every incoming request are proxied and response will return to the **INITIATOR**.
 - One direction only. *(Direction = **TUNNEL_IP**)*.
 
 *May be useful for developing on local machine, as you can tunnel HTTPS to HTTP connections.*
+
 <img src="https://github.com/pedrobartolini/golang_tunnel/blob/main/git/diagram.png">
 
 ### Environment variables:
-**TUNNEL_IP** =  *Server that proxy will forward requests to<br>*
-**PORT** = *Port that proxy will listen to*
+```env
+TUNNEL_IP = Where proxy will forward requests to
+PORT = Port proxy will listen to
+```
 
-## Instructions for HTTP connections
+## Instructions
 Build project
 ```batch
 go build
 ```
-
-Run build.
+Run build
 ```batch
 ./main
 ```
+**Remember to set your environment variables before running**
 
-## Instructions for HTTPS connections
-Depending on the web service you're using, SSL setup may done automatically. (Google Cloud, AWS, Azure, Render, etc)<br>
-If your web service doesn't do this or if you're not using a web service, you'll need to implement SSL manually into this project.
+## For HTTPS connections
+If you're using web services like GCP, Aws, Azure, Render, etc, HTTPS setup may be done automatically.
+
+**If your web service doesn't do this or if you're not using a web service, you'll need to implement SSL manually into this project.**
+
+Then follow steps in [**Instructions**](#instructions) section.
+
 
