@@ -6,7 +6,7 @@ This project utilizes **Gin** to tunnel connections **man-in-the-middle** style.
 
 *May be useful for developing on local machine, as you can tunnel HTTPS to HTTP connections.*
 
-<img src="https://github.com/pedrobartolini/golang_tunnel/blob/main/git/diagram.png">
+<img src="https://github.com/pedrobartolini/golang_tunnel/blob/main/readme/diagram.png">
 
 ### Environment variables:
 ```env
